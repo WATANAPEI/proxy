@@ -13,12 +13,14 @@ services:
             source: ./nginx
             target: /etc/nginx/conf.d
           - type: bind
-            source: ./p-drum
-            target: /www/app
+            source: ./p-drum/img
+            target: /www/app/p-drum/img
+          - type: bind
+            source: ./p-drum/audio
+            target: /www/app/p-drum/audio
           - type: volume
             source: out
             target: /www/app/p-drum
-            read_only: true
           - type: bind
             source: /etc/letsencrypt/
             target: /etc/letsencrypt/
@@ -26,7 +28,7 @@ services:
       networks:
           - mynet
       command: /bin/sh -c "envsubst '$$SSL_CRT_PATH$$SSL_KEY_PATH' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
-      restart: unless-stopped
+      #      restart: unless-stopped
 
 volumes:
     out:

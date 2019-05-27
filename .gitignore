@@ -1,2 +1,5 @@
 # static files for p-drum
 p-drum
+
+default.conf
+favicon.ico

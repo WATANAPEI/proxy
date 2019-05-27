@@ -30,8 +30,6 @@ server {
     # ssl_stapling on;
     # ssl_stapling_verify on;
 
-    include conf.d/p-drum.conf;
-
     location /p-drum {
         root   /www/app;
         index  index.html index.htm;
