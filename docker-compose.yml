@@ -12,6 +12,9 @@ services:
           - type: bind
             source: ./nginx
             target: /etc/nginx/conf.d
+          - type: bind
+            source: ./p-drum
+            target: /www/app
           - type: volume
             source: out
             target: /www/app/p-drum

@@ -32,13 +32,13 @@ server {
 
     include conf.d/p-drum.conf;
 
-#    location /p-drum {
-#        root   /www/app;
-#        index  index.html index.htm;
-#    }
+    location /p-drum {
+        root   /www/app;
+        index  index.html index.htm;
+    }
 
     location /favicon.ico {
-        root /www/app/p-drum;
+        root /www/app;
 #        empty_gif;
         access_log off;
     }
