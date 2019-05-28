@@ -1,0 +1,31 @@
+body {
+    margin: 10px 20px;
+}
+
+li {
+    list-style: none;
+}
+
+.dialogue-container{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.dialogue {
+    flex: auto;
+}
+
+
+.dialogue > ul > li{
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    display: flex;
+    margin: 100px 0 0 0;
+    justify-content: center;
+    align-content: center;
+
+}

@@ -35,6 +35,11 @@ server {
         index  index.html index.htm;
     }
 
+    location /lang {
+        root   /www/app;
+        index  index.html index.html;
+    }
+
     location /favicon.ico {
         root /www/app;
 #        empty_gif;
