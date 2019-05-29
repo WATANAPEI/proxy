@@ -16,8 +16,8 @@ services:
             source: ./p-drum/audio
             target: /www/app/p-drum/audio
           - type: volume
-            source: out
-            target: /www/app/p-drum
+            source: public
+            target: /www/app
           - type: bind
             source: /etc/letsencrypt/
             target: /etc/letsencrypt/
@@ -28,7 +28,7 @@ services:
       #      restart: unless-stopped
 
 volumes:
-    out:
+    public:
         external: true
 
 networks:
