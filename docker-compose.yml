@@ -9,15 +9,9 @@ services:
           - SSL_CRT_PATH="${SSL_CRT_PATH}"
           - SSL_KEY_PATH="${SSL_KEY_PATH}"
       volumes:
-          - type: bind
-            source: ./p-drum/img
-            target: /www/app/p-drum/img
-          - type: bind
-            source: ./p-drum/audio
-            target: /www/app/p-drum/audio
           - type: volume
-            source: public
-            target: /www/app
+            source: out
+            target: /www/app/p-drum
           - type: bind
             source: /etc/letsencrypt/
             target: /etc/letsencrypt/
@@ -28,7 +22,7 @@ services:
       #      restart: unless-stopped
 
 volumes:
-    public:
+    out:
         external: true
 
 networks:
