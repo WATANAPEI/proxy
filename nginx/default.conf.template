@@ -33,6 +33,9 @@ server {
     # enable XSS protection
     add_header X-XSS-Protection "1; mode=block";
 
+    # disable to display inside iframe
+    add_header X-Frame-Options DENY;
+
     location /p-drum {
         root   /www/app;
         index  index.html index.htm;
