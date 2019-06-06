@@ -36,6 +36,9 @@ server {
     # disable to display inside iframe
     add_header X-Frame-Options DENY;
 
+    # check content-type only by the header
+    add_header X-Content-Type-Options nosniff;
+
     location /p-drum {
         root   /www/app;
         index  index.html index.htm;
