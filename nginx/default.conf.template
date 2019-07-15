@@ -1,3 +1,7 @@
+upstream backend {
+    server 127.0.0.1:3000;
+}
+
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -47,6 +51,9 @@ server {
     location /lang {
         root   /www/app;
         index  index.html index.html;
+        location /lang/api/v1/words {
+            proxy_pass http://backend/words;
+        }
     }
 
     location /favicon.ico {
