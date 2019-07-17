@@ -12,6 +12,9 @@ services:
           - type: volume
             source: out
             target: /www/app/p-drum
+          - type: volume
+            source: out_lang-frontend
+            target: /www/app/lang/words
           - type: bind
             source: /etc/letsencrypt/
             target: /etc/letsencrypt/
@@ -23,6 +26,8 @@ services:
 
 volumes:
     out:
+        external: true
+    out_lang-frontend:
         external: true
 
 networks:
