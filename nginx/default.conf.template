@@ -33,7 +33,7 @@ server {
     # fetch OCSP records from URL in ssl_certificate and cache them
     # ssl_stapling on;
     # ssl_stapling_verify on;
-    
+
     # enable XSS protection
     add_header X-XSS-Protection "1; mode=block";
 
@@ -51,6 +51,11 @@ server {
     location /lang {
         root   /www/app;
         index  index.html index.html;
+        location ~ ^/lang/words/^(index.html)+$ {
+            root /www/app;
+            index index.html index.htm;
+            rewrite ^/lang/words/^(index.html)+$ /lang/words/;
+        }
         location /lang/api/v1/words {
             proxy_pass http://backend/words;
         }
